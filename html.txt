@@ -1,0 +1,1506 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+  </title>
+  <style type="text/css">
+   .expand2{
+			width: 0;
+			height: 0;
+			border-width: 10px;
+			border-style: solid;
+			border-color: #000 transparent transparent transparent;
+			float:left;
+			float: left;
+			margin-left: 20px;
+			margin-top: 15px;
+		}
+		.expand{
+			width: 0;
+			height: 0;
+			border-width: 10px;
+			border-style: solid;
+			border-color: transparent transparent transparent #fff;
+			float:left;
+			float: left;
+			margin-left: 20px;
+			margin-top: 10px;
+		}
+		.lan {
+			cursor: pointer;
+			text-decoration: none;
+			color: #0163AC;
+			font-size: 12px;
+			margin-left: 3px;
+		}
+
+		.lan_r {
+			margin-right: 5px;
+		}
+
+		.lan_p {
+			margin-bottom: -2px;
+			margin-left: 3px;
+			height: 12px;
+		}
+
+		.cl {
+			clear: left;
+		}
+
+		.opt {
+			padding-top: 4px;
+			font-size: 18px;
+		}
+
+		.opt:hover {
+			text-decoration: underline;
+		}
+
+		.opt2 {
+			padding-top: 6px;
+			font-size: 14px;
+		}
+
+		.opt2:hover {
+			text-decoration: underline;
+		}
+
+		.opt_sel {
+			height: 30px;
+			background-color: #f18a15;
+			/* padding-left: 25px; */
+			color: White;
+			cursor: pointer;
+			padding: 20px 0 20px 25px
+		}
+
+		.opt_sel2 {
+			height: 30px;
+			background-color: #C9CACA;
+			padding-left: 25px;
+			color: #757475;
+			cursor: pointer;
+		}
+
+		.opt_no {
+			height: 30px;
+			/* padding-left: 25px; */
+			cursor: pointer;
+			color: #757475;
+			padding: 20px 0 20px 25px;
+		}
+
+		.opt_no2 {
+			height: 30px;
+			padding-left: 25px;
+			cursor: pointer;
+			color: #757475;
+		}
+
+		.shadow {
+			filter: progid:DXImageTransform.Microsoft.Shadow(color=#909090, direction=120, strength=4);
+			-moz-box-shadow: 2px 2px 10px #909090;
+			-webkit-box-shadow: 2px 2px 10px #909090;
+			box-shadow: 2px 2px 10px #909090;
+		}
+
+		.back_div {
+			float: left;
+			margin-top: 10px;
+			background-color: White;
+			height:500px;
+		}
+
+		.rad_l {
+			border-radius: 10px 0px 0px 10px;
+			border: solid 1px #666666;
+			border-right: none;
+		}
+
+		.rad_r {
+			border-radius: 0px 10px 10px 0px;
+			border: solid 1px #666666;
+		}
+
+		.rad_t {
+			border-radius: 10px 10px 0px 0px;
+		}
+
+		.rad_b {
+			border-radius: 0px 0px 10px 10px;
+			border: solid 1px #666666;
+			border-top: none;
+		}
+
+		.rad_a {
+			border-radius: 10px 10px 10px 10px;
+		}
+
+		.back_div2 {
+			margin-left: 15px;
+			width: 200px;
+			float: left;
+			margin-top: 10px;
+			background-color: White;
+			height: auto;
+		}
+
+		.bot_txt {
+			font-family: Arial;
+			font-size: 14px;
+			text-align: center;
+			color: #757475;
+		}
+
+		.sp_20 {
+			width: 10px;
+			height: 20px;
+		}
+
+		.sp_40 {
+			width: 10px;
+			height: 40px;
+		}
+
+		.lab_b {
+			background-color: #f18a15;
+			font-size: 18px;
+			height: 40px;
+			color: white;
+			text-align: center;
+		}
+
+		.lab_h {
+			margin-top: 15px;
+			color: #666666;
+			font-size: 14px;
+			line-height: 18px;
+		}
+  </style>
+  <script type="text/javascript">
+   function lan() {
+			return slanV
+		}
+		var help_cn = {
+			1: {
+				t: "<font style='font-weight:bold'>éåå¨ä¿¡æ¯</font><br/><br/>å¦ææ¨å¨æ­¤å¤çå°éåå¨ä¿¡æ¯ï¼åè¡¨ç¤ºééå¨å·²æåè¿æ¥å°éåå¨,å¦ææ²¡æ,è¯·èç³»æ¨çå®è£äººåæèæ¯å·¥åçææ¯æ¯æäººåå¯»æ±å¸®å©<br/><br/><font style='font-weight:bold'>è®¾å¤ä¿¡æ¯</font><br/><br/>æ¾ç¤ºééå¨ä¿¡æ¯<br/><br/><ul><li>æ çº¿APæ¨¡å¼ï¼å¦æå¯ç¨ï¼æ¨å¯ä»¥è¿æ¥å°ééå¨çæ çº¿ç½ç»ã</li><li>æ çº¿STAæ¨¡å¼ï¼å¦æå¯ç¨ï¼ééå¨å¯ä»¥è¿æ¥å°æ¨çæ¬å°Wi-Fiç½ç»ã</li></ul><br/><br/><font style='font-weight:bold'>è¿ç¨æå¡å¨ä¿¡æ¯</font><br/><br/>æ¾ç¤ºè¿ç¨æå¡å¨è¿æ¥çç¶æã<br/><br/><font style='font-weight:bold'>è¿ç¨æå¡å¨çç¶æ</font><br/><br/><ul style = 'margin-bottom:0px;'><li >æªè¿æ¥ï¼ä¸æ¬¡å°è¯è¿æ¥æå¡å¨æ¶æªæåã</li></ul><ol style='list-style-type: none;    margin-top: 0px;'><li><span style = margin-left:-18%>(1)</span>	æ£æ¥ééå¨æ¯å¦æIPå°åã</li><li><span style = margin-left:-18%>(2)</span> ç¡®ä¿æ¬å°è·¯ç±å¨å·²è¿æ¥å°ç½ç»</li><li><span style = margin-left:-18%>(3)</span> ç¡®ä¿æ¬å°è·¯ç±å¨é²ç«å¢åè®¸ééå¨è¿ç»­çåçæ§ç³»ç»åéæä»çæ§ç³»ç»åéæ¶æ¯ã</li></ol><ul><li>Connectedï¼ä¸æå¡å¨çè¿æ¥æåã</li><li>Unknownï¼ä¸æå¡å¨çè¿æ¥æªæåï¼è¯·å¨5åéååæ¬¡æ£æ¥ææä¸æ¬¡éç½®æé®ä»¥å¼ºå¶è¿æ¥ã</li><li>Closedï¼æªä½¿ç¨æ­¤æå¡å¨ã</li></ul>"
+			},
+			31: {
+				t: 'å¨æ­¤é¡µé¢ä¸ï¼æ¨å¯ä»¥åå»âæç´¢âæé®èªå¨æç´¢éè¿çæ çº¿ç½ç»ï¼å¹¶éè¿è¾å¥ç½ç»å¯ç å°ééå¨è¿æ¥å°æ¬å°ç½ç»ã<br /><br /><font style="color:#666666;font-weight:bold;">æ³¨æï¼åå»âä¿å­âåï¼ééå¨å°ç«å³éæ°å¯å¨ãå¦æè¿æ¥æåï¼ééå¨çæ çº¿APæ¨¡å¼å°è¢«ç¦ç¨ãå¦ææ²¡æï¼åéè¦éæ°ç»å½ä»¥éæ°è¿è¡éç½®ã</font><br /><br /><font style="color:#666666;font-weight:bold;"></font>æ³¨æï¼æåè¿æ¥åï¼è¿æ¥çå¯ç å°æ´æ¹ä¸ºæ¨è¿æ¥å°çWi-Fiçå¯ç ã'
+			},
+			32: {
+				t: "å¨æ­¤é¡µé¢ä¸ï¼å°æ¾ç¤ºå¯ç¨ç½ç»çåè¡¨ãå¦ææªæ¾ç¤ºæ¨çç½ç»ï¼è¯·åå»âå·æ°âåæ¬¡æç´¢ã<br /><br />æ³¨ï¼æ­¤åè¡¨ä¸­ä»æ¾ç¤º2.4GHzç½ç»ã"
+			},
+			4: {
+				t: "å¦ææ¨çééå¨æ¯ææçº¿ç½ç»ï¼æ¬é¡µå¸®å©æ¨è®¾ç½®æçº¿ç½ç»åæ°ï¼å½æ¨éæ©æçº¿æ¹å¼åï¼ç³»ç»å°èªå¨å³é­æ çº¿æ¹å¼ä¸­çSTAæ¨¡å¼ï¼æ¨å¯ä»¥éè¿éæ©å¼å¯/å³é­æ çº¿åè½æ¥è®¾ç½®æ¯å¦ä¿çæ çº¿æ¹å¼çAPæ¨¡å¼ãå¤§å¤æ°ç³»ç»æ¯æDHCPèªå¨è·åIPï¼å¦ææ¨çè·¯ç±å¨ä¸æ¯æï¼è¯·éæ©æå¨è¾å¥ã<br /><br /><font style='color:#666666;font-weight:bold;'>æ³¨æï¼åå»âä¿å­âåï¼ééå¨å°ç«å³éæ°å¯å¨ãå¦æè¿æ¥æåï¼ééå¨çæ çº¿APæ¨¡å¼å°è¢«ç¦ç¨ãå¦ææ²¡æï¼åéè¦éæ°ç»å½ä»¥éæ°è¿è¡éç½®ã</font>"
+			},
+			51: {
+				t: 'ééå¨ä¸è¬å·¥ä½äº"æ°æ®ééæ¨¡å¼"ï¼å¦ææ¨çééå¨æ¯æ"éä¼ æ¨¡å¼"ï¼æ¨å¯ä»¥éæ©éä¼ æ¨¡å¼ï¼å¨æ­¤æ¨¡å¼ä¸ï¼ééå¨ä¸ä¹ç¸è¿çè®¾å¤å°ç´æ¥åè¿ç¨è®¡ç®æºè¿è¡éä¿¡ã<br /><br /><font style=\'color:#666666;font-weight:bold;\'>âæ³¨æï¼æ´æ¹è®¾ç½®åï¼å¿é¡»éå¯ééå¨ãéå¯åï¼æ¨å¿é¡»éæ°ç»å½éç½®çé¢ï¼å»ºè®®å®æææéç½®ååéå¯ã</font>'
+			},
+			52: {
+				t: 'å¦æééå¨æ¯æï¼æ¨å¯ä»¥åæ¶åå¤ä¸ªæå¡å¨ä»¥TCP/UDPçå½¢å¼åéæ°æ®ã<br /><br /><font style="color:#666666;font-weight:bold;">âæ³¨æï¼æ´æ¹è®¾ç½®åï¼å¿é¡»éå¯ééå¨ãéå¯åï¼æ¨å¿é¡»éæ°ç»å½éç½®çé¢ï¼å»ºè®®å®æææéç½®ååéå¯ã</font>'
+			},
+			53: {
+				t: "è¯¥é¡µé¢ç¨äºéç½®ééå¨çä¸²å£éä¿¡ååç½®çWeb Serverçåæ°ï¼è¯·å°½éä¸è¦æ´æ¹é»è®¤è®¾ç½®ãæ´æ¹åæ°å¯è½å¯¼è´è®¾å¤æ æ³å·¥ä½ã<br /><br /><font style='color:#666666;font-weight:bold;'>âæ³¨æï¼æ´æ¹è®¾ç½®åï¼å¿é¡»éå¯ééå¨ãéå¯åï¼æ¨å¿é¡»éæ°ç»å½éç½®çé¢ï¼å»ºè®®å®æææéç½®ååéå¯ã</font>"
+			},
+			54: {
+				t: 'å¨æ­¤é¡µé¢ä¸­ï¼æ¨å¯ä»¥éç½®è®¾å¤å¨æ¥å¥ç¹æ¨¡å¼ä¸å·¥ä½æ¶çåæ°ã<br /><br />å»ºè®®æ´æ¹ééå¨çé¢çå¯ç ï¼ä»¥å¢å¼ºç³»ç»å®å¨æ§ãè¯·è®°ä½è¿ä¸ªå¯ç ãå¦æå¿è®°äºå¯ç ï¼åéè¦å°ééå¨æ¢å¤åºåè®¾ç½®ã<br /><br /><font style="color:#666666;font-weight:bold;">æ³¨æï¼æ´æ¹å¯ç åï¼å¿é¡»éå¯ééå¨ã<br /><br />éå¯åï¼æ¨å¿é¡»éæ°ç»å½ç½é¡µéç½®çé¢ï¼å»ºè®®å¨å®ææ´ä¸ªéç½®åéæ°å¯å¨ã</font>'
+			},
+			6: {
+				t: 'è¯¥é¡µé¢è®¾ç½®ç¨æ·ç¨äºç»éééå¨åç½®Web Serverçç¨æ·ååå¯ç ã<br /><br /><font style="color:#666666;font-weight:bold;">âæ³¨æï¼æ´æ¹è®¾ç½®åï¼å¿é¡»éå¯ééå¨ãéå¯åï¼æ¨å¿é¡»éæ°ç»å½éç½®çé¢ï¼å»ºè®®å®æææéç½®ååéå¯ã</font>'
+			},
+			71: {
+				t: 'æ¨å¯ä»¥éè¿å°æ¬å°çµèä¸çåºä»¶æ´æ°æä»¶ä¸ä¼ çæ¹å¼æ´æ°ééå¨åºä»¶ã<br /><br /><font style="color:#666666;font-weight:bold;">âæ³¨æï¼åçº§åï¼ééå¨å°èªå¨éå¯ãéå¯åï¼æ¨å¿é¡»éæ°ç»å½éç½®çé¢ï¼å»ºè®®å®æææéç½®ååéå¯ã</font>'
+			},
+			72: {
+				t: 'æ¨å¯ä»¥éè¿å°æ¬å°çµèä¸çåºä»¶æ´æ°æä»¶ä¸ä¼ çæ¹å¼æ´æ°éåå¨åºä»¶ã<br /><br /><font style="color:#666666;font-weight:bold;">âæ³¨æï¼åçº§åï¼ééå¨å°èªå¨éå¯ãéå¯åï¼æ¨å¿é¡»éæ°ç»å½éç½®çé¢ï¼å»ºè®®å®æææéç½®ååéå¯ã</font>'
+			},
+			8: {
+				t: "éæ°å¯å¨ååºç¨å°æ´æ¹ã"
+			},
+			9: {
+				t: '<font style="color:#666666;font-weight:bold;">å°ééå¨æ¢å¤å°åºåè®¾ç½®åï¼å½åè®¾ç½®å°è¢«å é¤ã</font>'
+			},
+			res: {
+				t: '<font style="color:#666666;font-weight:bold;">âæ³¨æï¼è®¾å¤IPå°åå¯è½ä¼åçæ¹åï¼è·åè®¾å¤IPå°åçæ¹æ³ï¼è¯·åç§å®å¨ä½¿ç¨æåã</font>'
+			}
+		};
+		var opt_cn = {
+			1: {
+				t: "ç³»ç»ä¿¡æ¯"
+			},
+			3: {
+				t: "å¿«ééç½®"
+			},
+			4: {
+				t: "æçº¿è®¾ç½®"
+			},
+			5: {
+				t: "é«çº§è®¾ç½®"
+			},
+			51: {
+				t: "å·¥ä½æ¨¡å¼"
+			},
+			52: {
+				t: "è¿ç¨æå¡å¨è®¾ç½®"
+			},
+			53: {
+				t: "ç«¯å£è®¾ç½®"
+			},
+			54: {
+				t: "æ çº¿æ¥å¥ç¹è®¾ç½®"
+			},
+			6: {
+				t: "è´¦å·ç®¡ç"
+			},
+			7: {
+				t: "è½¯ä»¶åçº§"
+			},
+			71: {
+				t: "éè®¯æ¨¡ååçº§"
+			},
+			72: {
+				t: "éåå¨åçº§"
+			},
+			8: {
+				t: "éå¯"
+			},
+			9: {
+        t: "æ¢å¤"
+      },
+			help: {
+				t: "å¸®å©"
+			}
+		};
+		var btn_cn = {
+			1: {
+				t: "å¼å§åå¯¼"
+			},
+			2: {
+				t: "å·æ°"
+			},
+			3: {
+				t: "ä¸ä¸æ­¥"
+			},
+			4: {
+				t: "ä¸ä¸æ­¥"
+			},
+			5: {
+				t: "å®æ"
+			},
+			6: {
+				t: "æç´¢"
+			},
+			7: {
+				t: "ä¿å­"
+			},
+			8: {
+				t: "ç¡®å®"
+			},
+			9: {
+				t: "å¼å§åçº§"
+			},
+			10: {
+				t: "éå¯"
+			},
+			11: {
+				t: "è¿å"
+			},
+			12: {
+				t: "ç¡®è®¤"
+			},
+			13:{
+				t: "è¯·æ±è¶æ¶,è¯·éæ°è®¾ç½®"
+			},
+			14:{
+				t: "æ­£å¨æ¢å¤åºåè®¾ç½®,ç¨åè¯·éæ°ç»é"
+			},
+		};
+		var main_cn = {
+			status: {
+				t1: "éåå¨ä¿¡æ¯",
+				t2: "ééå¨ä¿¡æ¯",
+				t3: "è¿ç¨æå¡å¨ä¿¡æ¯",
+				1: "éåå¨åºåå·",
+				2: "åºä»¶çæ¬å·",
+				4: "éåå¨åå·",
+				5: "éåå¨æ¸©åº¦",
+				6: "å½ååç",
+				7: "å½æ¥åçµé",
+				8: "æ»åçµé",
+				9: "æ¥è­¦ä¿¡æ¯",
+				10: "æåæ´æ°æ¶é´",
+				11: "è®¾å¤åºåå·",
+				12: "åºä»¶çæ¬å·",
+				13: "æ çº¿APæ¨¡å¼",
+				14: "SSID",
+				15: "IPå°å",
+				16: "MACå°å",
+				17: "æ çº¿STAæ¨¡å¼",
+				18: "è·¯ç±å¨SSID",
+				19: "ä¿¡å·å¼ºåº¦",
+				20: "IPå°å",
+				21: "MACå°å",
+				22: "æçº¿æ¨¡å¼",
+				23: "IPå°å",
+				24: "MACå°å",
+				25: "è¿ç¨æå¡å¨A",
+				26: "è¿ç¨æå¡å¨B",
+				27: "è¿ç¨æå¡å¨C",
+				28: "å¼å¯",
+				29: "å³é­",
+			},
+			wireless: {
+				1: "ç½ç»åç§°ï¼SSIDï¼<br />(æ³¨æï¼åºåå¤§å°å)",
+				2: "å³ä½¿æ­¤ç½ç»æªå¹¿æ­ï¼ä¹è¿è¡è¿æ¥",
+				3: "æ çº¿è·¯ç±å¨MACå°å",
+				4: "ä¾å¦ï¼00:01:02:03:04:05",
+				5: "å å¯æ¹å¼",
+				6: "å å¯ç±»å",
+				7: "å å¯ç®æ³",
+				8: "å¯ç  (æ³¨æï¼åºåå¤§å°å)",
+				9: "(16è¿å¶ï¼10æ26ä½å­ç¬¦ãASCIIç ï¼5æ13ä½å­ç¬¦ã)",
+				10: "æ¾ç¤ºå¯ç ",
+				11: "å¯ç ï¼8-64 Bytesï¼<br />(æ³¨æï¼åºåå¤§å°å)",
+				12: "æ¾ç¤ºå¯ç ",
+				13: "èªå¨è·å¾IPå°å",
+				14: "IPå°å",
+				15: "å­ç½æ©ç ",
+				16: "ç½å³å°å",
+				17: "DNSæå¡å¨å°å",
+				18: "âæ³¨æï¼ä¿å­åï¼ç³»ç»ä¼ç«å³éå¯ãå¦æè¿æ¥æåï¼ééå¨çæ çº¿APæ¨¡å¼å°è¢«ç¦ç¨ãå¦ææ²¡æè¿æ¥æåï¼åéè¦éæ°ç»å½ä»¥éæ°è¿è¡éç½®ã",
+				19: "è¯·éæ©æ¨å½åä½¿ç¨çæ çº¿ç½ç»",
+				20: "æ³¨æï¼å½æéWiFiç½ç»çRSSI/ä¿¡å·å¼ºåº¦å°äº15%æ¶ï¼è¿æ¥å¯è½ä¸ç¨³å®ï¼è¯·éæ©å¶ä»å¯ç¨ç½ç»ææé«ä¿¡å·å¼ºåº¦ã",
+				21: "å¼å¯",
+				22: "å³é­",
+				23: "è·¯ç±åè¡¨",
+				24: "åç§°",
+				25: "å¼ºåº¦(%)",
+				26: "ä¿¡é",
+				27: "è®¾ç½®å¤±è´¥ï¼è¯·éæ°è®¾ç½®",
+			},
+			cable: {
+				1: "æ çº¿åè½",
+				2: "èªå¨è·å¾IPå°å",
+				3: "IPå°å",
+				4: "å­ç½æ©ç ",
+				5: "ç½å³å°å",
+				6: "DNSæå¡å¨å°å",
+				7: "âæ³¨æï¼ä¿å­åï¼ç³»ç»ä¼ç«å³éå¯ã"
+			},
+			select: {
+				t1: "å·¥ä½æ¨¡å¼",
+				1: "å·¥ä½æ¨¡å¼ï¼",
+				2: "æ°æ®ééæ¨¡å¼",
+				3: "éä¼ æ¨¡å¼"
+			},
+			remote: {
+				t1: "è¿ç¨æå¡å¨è®¾ç½®",
+				t2: "è¿ç¨æå¡å¨Aè®¾ç½®",
+				1: "æå¡å¨",
+				2: "IPå°å",
+				3: "åå",
+				4: "ç«¯å£",
+				5: "è¿æ¥æ¹å¼",
+				6: "ç¶æ",
+				7: "æµè¯",
+				8: "æå¡å¨A",
+				9: "æå¡å¨B",
+				10: "æå¡å¨C",
+				ot1: "é»è®¤"
+			},
+			port: {
+				t1: "ä¸²å£åæ°è®¾ç½®",
+				t2: "åç½®Serverç½ç»åæ°è®¾ç½®",
+				1: "æ³¢ç¹ç",
+				2: "æ°æ®ä½",
+				3: "æ ¡éªä½",
+				4: "åæ­¢ä½",
+				5: "CTSRTS",
+				6: "åè®®",
+				7: "ç«¯å£",
+				8: "æå¡å¨å°å",
+				9: "æå¤§TCPè¿æ¥æ°(1~32)",
+				10: "TCPè¶æ¶è®¾ç½® (ä¸è¶è¿600 ç§)"
+			},
+			wirepoint: {
+				t1: "æ çº¿æ¥å¥ç¹åæ°è®¾ç½®",
+				t2: "å®å¨è®¾ç½®",
+				t3: "å±åç½åæ°è®¾ç½®",
+				1: "ç½ç»æ¨¡å¼",
+				2: "ç½ç»åç§°ï¼SSIDï¼",
+				3: "æ¨¡åMACå°å",
+				4: "ä¿¡ééæ©",
+				5: "èªå¨éå",
+				6: "åéåç",
+				7: "é«",
+				8: "ä¸­",
+				9: "ä½",
+				10: "å å¯æ¨¡å¼",
+				11: "WEPå å¯",
+				12: "å¯ç (5 or 13 ASCII)",
+				13: "å¯ç (10 or 26 HEX)",
+				14: "WPAå å¯",
+				15: "å å¯ç®æ³",
+				16: "å¯ç (8-63ä½å­ç¬¦)",
+				17: "IPå°å(DHCPç½å³è®¾ç½®)",
+				18: "å­ç½æ©ç ",
+				19: "DHCP æå¡å¨",
+				20: "åç¨",
+				21: "å¯ç¨",
+				22: "åå",
+				23: "(1~30ä¸ªå­ç¬¦ï¼å¯ä½¿ç¨å­æ¯åæ°å­çç»åï¼ä½å¿é¡»åå«å­æ¯)",
+				24: "åç¨æ·å",
+				// 25: "ç¨æ·åï¼æå¤15ä¸ªå­ç¬¦ï¼",
+				25: "ç½ç»åç§°ï¼SSIDï¼",
+				26: "åæ¬¡è¾å¥æ°ç¨æ·å",
+				// 27: "æ°å¯ç ï¼æå¤15ä¸ªå­ç¬¦ï¼",
+				27: "å¯ç ï¼æå¤15ä¸ªå­ç¬¦ï¼",
+				28: "åæ¬¡è¾å¥æ°å¯ç ",
+				29: "ä¿®æ¹APå å¯æ¹å¼",
+				30: "æ çº¿æ¥å¥ç¹åæ°è®¾ç½®"
+
+			},
+			account: {
+				t1: "è®¾ç½®ä¸ä¸ªæ°çç»å½è´¦å·ä¸å¯ç ",
+				1: "åç¨æ·å",
+				2: "æ°ç¨æ·å",
+				3: "åæ¬¡è¾å¥æ°ç¨æ·å",
+				4: "æ°å¯ç ",
+				5: "åæ¬¡è¾å¥æ°å¯ç "
+			},
+			update: {
+				t1: "éè®¯æ¨¡åè½¯ä»¶åçº§",
+				t2: "éåå¨è½¯ä»¶åçº§",
+				1: "å½åè½¯ä»¶çæ¬ï¼",
+				2: "âæ³¨æï¼è½¯ä»¶åçº§è¿ç¨å¤§æ¦ä¸åéï¼å¨åçº§è¿ç¨ä¸­è¯·ç¡®ä¿çµèå§ç»ä¸ééå¨ä¿æè¿æ¥ï¼å¹¶ä¸ééå¨ä¸è½æ­çµï¼å¦åééå¨å°æ°¸ä¹æåã",
+				3: "å½åè½¯ä»¶çæ¬ï¼"
+			},
+			restart: {
+				t1: "éå¯ééå¨",
+				1: "<font class='b'>éè¦æç¤ºï¼</font><br /><br />éå¯åï¼æ¨å¿é¡»éæ°ç»å½å°ç½é¡µçéç½®çé¢ã<br /><br />å»ºè®®å¨å®ææ´ä¸ªéç½®åéæ°å¯å¨ã<br /><br />éæ°å¯å¨å°å¨å¾ç­çæ¶é´åä¸­æ­ç½ç»ï¼æ¨ç¡®å®ç°å¨éæ°å¯å¨åï¼"
+			},
+			reset: {
+				t1: "æ¢å¤åºåè®¾ç½®",
+				1: "<font class='b'>éè¦æç¤ºï¼</font><br /><br />è¿å°ä½¿ééå¨éç½®ä¸ºåºåè®¾ç½®ãéç½®åï¼æ¨å¯ä»¥å¨ä»¥ä¸ä½ç½®è®¿é®ééå¨çç½é¡µçé¢:http://10.10.100.254 ä½¿ç¨ç¨æ·ååå¯ç ï¼'admin','123456789'<br /><br/>æ¯å¦ç¡®å®è¦éç½®ééå¨ï¼"
+			},
+			commit: {
+				t1: "è®¾ç½®å®æï¼ééå¨å°å°è¯è¿æ¥å°ç½ç»ã",
+				t2: "éå¯æåï¼",
+				t3: "åºåè®¾ç½®æ¢å¤æåï¼",
+				t4: "ä¿å­æåï¼",
+				t5: "æ çº¿åè½å¼å¯",
+				1: "æ³¨:<br />&nbsp;&nbsp;&nbsp;&nbsp;ééå¨è¿æ¥ç½ç»éè¦10så·¦å³ãå¦æééå¨ä¸çç»¿è²LEDåæå¸¸äº®ï¼å°±è¡¨ç¤ºå®è£æåã<br / ><br / >&nbsp;&nbsp;&nbsp;&nbsp;å¦æç»¿è²LEDä¸ç´éªçï¼APä»ç¶å¯ç¨ï¼è¯·éæ°è¿æ¥ï¼éæ°è®¾ç½®ãä¸å®è¦è¾å¥æ­£ç¡®çWi-Fiå¯ç <br / ><br / >&nbsp;&nbsp;&nbsp;&nbsp;æ´å¤çå¸®å©åå¶ä»çæéçæé¤ï¼è¯·åéå®è£æåæç»éåæ¯æç½ç«ã",
+				2: "å¦ééæ°è¿å¥éç½®çé¢ï¼è¯·ç¡®ä¿æ¨ççµèæææºä¸è®¾å¤å¤äºåä¸ç½æ®µä¸­ï¼å¹¶è¾å¥è®¾å¤IPå°åè¿è¡è®¿é®ã",
+				3: 'æ¨å¯ä»¥éæ©æå¨å³é­è¯¥é¡µæéæ°è¿æ¥ééè®¾å¤æå±ç½ç»ååç»å½è³<a onClick="window.parent.relogin()" style="cursor:pointer; text-decoration:underline;color:#666666;font-weight:bold;">éç½®çé¢</a>ã',
+				4: "éå¯è®¾å¤åéç½®æè½çæã<br />éå¯ä¹åï¼æ¨éè¦éæ°ç»å½éç½®çé¢è¿è¡å¶ä»éç½®ï¼å»ºè®®æ¨å¨å®æææè®¾ç½®ååéå¯ã<br />è¯·ç¹å»[éå¯]æé®ç«å³éå¯ï¼æç¹å»[è¿å]æé®ç»§ç»­éç½®ã<br />æ¨å¯ä»¥å¨å®æææè®¾ç½®åéæ©å·¦è¾¹èåæ ä¸­çéå¯åè½è¿è¡éå¯ã",
+				5: "æ çº¿åè½å·²å³é­ï¼å¦éè¿è¡æ çº¿è®¾ç½®ï¼å¿é¡»åå¯ç¨æ çº¿åè½ãå¯ç¨æ çº¿åè½ç³»ç»ä¼è¿è¡éå¯ï¼ç³»ç»éå¯ä¼ä¸­æ­ç½ç»å¾ç­ä¸æ®µæ¶é´ï¼ç¡®å®ç°å¨å¯ç¨æ çº¿åè½åï¼ ",
+				6: "è®¾ç½®æå!"
+			}
+		};
+		var tip_cn = {
+			1: "å¼å¯",
+			2: "å³é­",
+			3: "å·²è¿æ¥",
+			4: "æªè¿æ¥",
+			5: "ç§å",
+			6: "æ²¡æéæ©æ çº¿WiFiï¼",
+			7: "å¯ç ä¸ºç©ºï¼",
+			8: "å¯ç ä¸ä¸è´ï¼",
+			9: "IPå°åæ æï¼",
+			10: "å­ç½æ©ç æ æï¼",
+			11: "ç½å³å°åæ æï¼",
+			12: "DNSæå¡å¨å°åæ æï¼",
+			13: "è¯·è¾å¥5æ13ä¸ªASCIIï¼",
+			14: "è¯·è¾å¥10æ26ä¸ªHexï¼",
+			15: "è¯·è¾å¥8-63ä¸ªå­ç¬¦ï¼",
+			16: "è¯·è¾å¥å¯ç ï¼",
+			17: "MACå°åæ æï¼",
+			18: "è¯·éæ©æä»¶ï¼",
+			19: "æ¨ç¡®å®è¦åçº§åï¼",
+			20: "ç¨æ·åä¸ºç©ºï¼",
+			21: "ç¨æ·åä¸ä¸è´ï¼",
+			22: "ç«¯å£ä¸æ­£ç¡®ï¼",
+			23: "ç«¯å£æ°å¼å¿é¡»å°äº65535ï¼",
+			24: "æå¤§TCPè¿æ¥æ°ä¸æ­£ç¡®ï¼",
+			25: "æå¤§TCPè¿æ¥æ°å¿é¡»å°äºç­äº32ï¼",
+			26: "TCPè¶æ¶è®¾ç½®ä¸æ­£ç¡®ï¼",
+			27: "TCPè¶æ¶è®¾ç½®å¿é¡»å°äºç­äº600ç§ï¼",
+			28: "æå¡å¨å°åæ æï¼",
+			29: "è¯·è¾å¥æ­£ç¡®çç«¯å£å·ï¼",
+			30: "ååæ ¼å¼ä¸æ­£ç¡®ï¼",
+			31: "è¿æ¥WiFiç½ç»å¤±è´¥ï¼æéæ©çWiFiç½ç»çå å¯æ¹å¼æå¡«åçå¯ç ä¸æ­£ç¡®ã",
+			32: "è¿æ¥ä¸­",
+			33: "å¯ç ä¸å¾å°äº8ä¸ªå­ç¬¦ï¼",
+			34: "è¯·æå¨éæ©WEPå å¯çè®¤è¯æ¹å¼ãè¯·æ¥çæ¨çè·¯ç±å¨ç¡®è®¤åéçè®¤è¯æ¹å¼ï¼å¦éæ©éè¯¯å¯è½å¯¼è´è®¾ç½®å¤±è´¥ã",
+			35: "è¯·ç¡®è®¤è¾å¥çå¯ç ç¬¦åï¼\n    16è¿å¶ï¼è¾å¥10æ26ä½ (0-9, a-f, A-F èå´åç) å­ç¬¦ã\n    ASCIIç ï¼è¾å¥5æ13ä½ (0-9, a-z, A-Z èå´åç) å­ç¬¦ã",
+			36: "è­¦åï¼è¯¥å å¯æ¹å¼ä¸è½éªè¯å¯ç æ¯å¦æ­£ç¡®ï¼",
+			37: "éåå¨è½¯ä»¶åçº§å¤±è´¥ï¼è¯·éè¯ï¼",
+			38: "",
+			39: "éåå¨è½¯ä»¶åçº§æåï¼æ¨¡åå°èªå¨éå¯ï¼è¯·å³é­é¡µé¢ã",
+			40: "SSIDä¸è½ä¸ºç©ºï¼",
+			41: "æªç¥",
+			42: "éè®¯ä¸­æ­ï¼åçº§å¤±è´¥è¯·åç»éåå¨æ­çµåéæ°éçµï¼ç¶åéæ°å¯å¨åçº§æµç¨ï¼"
+		};
+		var servertip_cn = {
+			h1: "æå¡å¨A",
+			h2: "æå¡å¨B",
+			h3: "æå¡å¨C",
+			1: "è¯·è¾å¥",
+			2: "çç«¯å£ï¼",
+			3: "è¯·è¾å¥",
+			4: "çIPå°åæååï¼",
+			5: "",
+			6: "çIPå°åä¸æ­£ç¡®ï¼",
+			7: "",
+			8: "çç«¯å£ä¸æ­£ç¡®ï¼",
+			9: "ç«¯å£æ°å¼å¿é¡»å°äº65535ï¼"
+		};
+		var help_en = {
+			1: {
+				t: "<font style='font-weight:bold'>Inverter information</font><br/><br/>If you see inverter information here, it means the stick is successfully connected to the inverter. If not, please contact your installer or factory Support<br/><br/><font style='font-weight:bold'>Device information</font><br/><br/>Shows information of the monitoring stick.<br/><br/><ul><li>Wireless AP mode: If enabled, you can connect to the wireless network of the stick.</li><li>Wireless STA mode: If enabled, the stick can connect to your local Wi-Fi network.</li></ul><br/><br/><font style='font-weight:bold'>Remote server information</font><br/><br/>Shows the status of the remote server connection.<br/><br/><font style='font-weight:bold'>Status of the remote server</font><br/><br/><ul style = 'margin-bottom:0px;'><li >Not connected: Connection to the server was unsuccessful on the last connection attempt.</li></ul><ol style='list-style-type: none;    margin-top: 0px;'><li><span style = margin-left:-18%>(1)</span>	Check if the monitoring stick has an IP address.</li><li><span style = margin-left:-18%>(2)</span> Make sure the local router is connected to the internet.</li><li><span style = margin-left:-18%>(3)</span> Make sure the local router firewall allows incoming and outgoing messages to / from the monitoring stick.</li></ol><ul><li>Connected: Connection to the server is successful.</li><li>Unknown: Connection to server was unsuccessful, check again in 5 minutes or press the reset button once to force the connection.</li><li>Closed: This server is not used.</li></ul>"
+			},
+			31: {
+				t: 'On this page, you can click the "Search" button to automatically search for nearby wireless networks and connect the stick to a local network by entering the network password.<br /><br /><font style="color:#666666;font-weight:bold;">Note: After clicking Save, the stick will restart immediately. If connection is successful, the wireless AP mode of the stick will be disabled. If not, you need to re-login to redo the configuration.</font><br /><br /><font style="color:#666666;font-weight:bold;"></font>Note: After successful connection, the password of the interface will change to the Wi-Fi password you are connected to.'
+			},
+			32: {
+				t: "On this page, a list of available networks is shown. If your home network is not shown, please click Refresh to search again. <br /><br />Note: Only 2.4GHz networks are shown in this list."
+			},
+			4: {
+				t: "This page will help you to configure cable network parameters if your device supports cable network. <br /><br />When you choose cable network connection, the STA mode of wireless connection will be turned off by system automatically. <br /><br />Whether to keep the AP mode of wireless connection or not can be set by turning on or off the wireless function. <br /><br />Most systems support the function of DHCP to obtain IP address automatically. Please add it manually if your router does not support such function.<br /><br /><font style='color:#666666;font-weight:bold;'>âNote: After clicking Save, the system will restart immediately. <br /><br />You need to re-login the configuration interface after restart.</font>"
+			},
+			51: {
+				t: "The device usually works under data collection mode. You can select transparency mode if your device supports such function. <br /><br />When under transparency mode, the device with the connected device will communicate with remote computer directly.<br /><br /><font style='color:#666666;font-weight:bold;'>âNote: After changing the settings, the device must be restarted.<br/><br/>After restart, you will need to re-login the configuration interface. It is recommended to restart after completing all configurations.</font>"
+			},
+			52: {
+				t: 'Your device can transfer data to several servers in the form of TCP/UDP if your device  supports this function.<br /><br /><font style="color:#666666;font-weight:bold;">âNote: After changing the settings, the device must be restarted.<br/><br/>After restart, you will need to re-login the configuration interface. It is recommended to restart after completing all configurations.</font>'
+			},
+			53: {
+				t: "In this page, you can configure the serial ports communication and internal web server parameters of device. <br /><br />Please do not change the default settings, or the parameters change will cause device malfunction.<br /><br /><font style='color:#666666;font-weight:bold;'>âNote: After changing the settings, the device must be restarted.</font>"
+			},
+			54: {
+				t: 'In this page, you can configure the parameters of the device when it works under the access point mode. <br /><br />It is recommended to change the password of the stick interface to enhance the system security. Please remember this password. If the password is forgotten, you need to Reset the stick to factory settings.<br /><br /><font style="color:#666666;font-weight:bold;">Note: After changing the password, you must restart the stick.<br/><br/>After restart, you will need to re-login to the web interface. It is recommended to restart only after completing the whole configuration.</font>'
+			},
+			6: {
+				t: 'In this page, you can set your user name and password for logging in the internal web server of device.<br /><br /><font style="color:#666666;font-weight:bold;">âNote: After changing the settings, the device must be restarted.<br/><br/>After restart, you will need to re-login the configuration interface. It is recommended to restart after completing all configurations.</font>'
+			},
+			71: {
+				t: 'The firmware of device can be updated by uploading the update files from your local computer. <br /><br /><font style="color:#666666;font-weight:bold;">âNote: After upgrade, the device will automatically restart.<br/><br/>After restart, you will need to re-login the configuration interface. It is recommended to restart after completing all configurations.</font>'
+			},
+			72: {
+				t: 'The firmware of inverter can be updated by uploading the update files from your local computer. <br /><br /><font style="color:#666666;font-weight:bold;">âNote: After upgrade, the device will automatically restart.<br/><br/>After restart, you will need to re-login the configuration interface. It is recommended to restart after completing all configurations.</font>'
+			},
+			8: {
+				t: "Changes will be applied after restart. "
+			},
+			9: {
+				t: '<font style="color:#666666;font-weight:bold;">Note:After restoring the stick to factory settings, the current settings will be deleted.</font>'
+			},
+			res: {
+				t: '<font style="color:#666666;font-weight:bold;">âNote: The IP address of the device may have changed, please refer to User Manual to check the procedures to obtain the new IP address. </font>'
+			}
+		};
+		var opt_en = {
+			1: {
+				t: "Status"
+			},
+			// 2: {
+			// 	t: "Wizard"
+			// },
+			3: {
+				t: "Quick Set"
+			},
+			4: {
+				t: "Cable"
+			},
+			5: {
+				t: "Advanced"
+			},
+			51: {
+				t: "Working mode"
+			},
+			52: {
+				t: "Remote server"
+			},
+			53: {
+				t: "Port setting"
+			},
+			54: {
+				t: "Access point"
+			},
+			6: {
+				t: "Account"
+			},
+			7: {
+				t: "Upgrade"
+			},
+			71: {
+				t: "Upgrade firmware"
+			},
+			72: {
+				t: "Upgrade inverter"
+			},
+			8: {
+				t: "Restart"
+			},
+			9: {
+        t: "Reset"
+      },
+			help: {
+				t: "Help"
+			}
+		};
+		var btn_en = {
+			1: {
+				t: "Start"
+			},
+			2: {
+				t: "Refresh"
+			},
+			3: {
+				t: "Next"
+			},
+			4: {
+				t: "Back"
+			},
+			5: {
+				t: "OK"
+			},
+			6: {
+				t: "Search"
+			},
+			7: {
+				t: "Save"
+			},
+			8: {
+				t: "OK"
+			},
+			9: {
+				t: "Upload"
+			},
+			10: {
+				t: "Restart"
+			},
+			11: {
+				t: "Back"
+			},
+			12: {
+				t: "OK"
+			},
+			13: {
+				t: "Request timed out, please reset"
+			},
+			14:{
+				t: "Restoring factory settings, please log back in later"
+			},
+		};
+		var main_en = {
+			status: {
+				t1: "Inverter information",
+				t2: "Device information",
+				t3: "Remote server information",
+				1: "Inverter serial number",
+				2: "Firmware version",
+				4: "Inverter model",
+				5: "Inverter temprature",
+				6: "Current power",
+				7: "Yield today",
+				8: "Total yield",
+				9: "Alerts",
+				10: "Last updated",
+				11: "Device serial number",
+				12: "Firmware version",
+				13: "Wireless AP mode",
+				14: "SSID",
+				15: "IP address",
+				16: "MAC address",
+				17: "Wireless STA mode",
+				18: "Router SSID",
+				19: "Signal Quality",
+				20: "IP address",
+				21: "MAC address",
+				22: "Cable mode",
+				23: "IP address",
+				24: "MAC address",
+				25: "Remote server A",
+				26: "Remote server B",
+				27: "Remote server C",
+				28: "Enable",
+				29: "Disable",
+			},
+			wireless: {
+				1: "Network name (SSID)<br />(Note: case sensitive)",
+				2: "Connect the network even if it does not broadcast",
+				3: "Wireless router MAC address",
+				4: "E.g. 00:01:02:03:04:05",
+				5: "Encryption method",
+				6: "Encryption type",
+				7: "Encryption algorithm",
+				8: "Password (Note: case sensitive)",
+				9: "(HEX: 10 or 26 characters;ASCII: 5 or 13 characters)",
+				10: "Show passwords",
+				11: "Password (8-64 bytes)<br />(Note: case sensitive)",
+				12: "Show passwords",
+				13: "Obtain an IP address automatically",
+				14: "IP address",
+				15: "Subnet mask",
+				16: "Gateway address",
+				17: "DNS server address",
+				18: "Note: After clicking Save, the stick will restart immediately. If connection is successful, the wireless AP mode of the stick will be disabled. If not, you need to re-login to redo the configuration.",
+				19: "Please select your current wireless network",
+				20: "Note: When RSSI/signal strength of the selected WiFi network is less than 15%, the connection may be unstable, please select another available network or improve the signal strength.",
+				21: "Enable",
+				22: "Disable",
+				23: "Site Survey",
+				24: "SSID",
+				25: "RSSI(%)",
+				26: "Channel",
+				27: "Setting failed, please reset",
+			},
+			cable: {
+				1: "Wireless function",
+				2: "Obtain an IP address automatically",
+				3: "IP address",
+				4: "Subnet mask",
+				5: "Gateway address",
+				6: "DNS server address",
+				7: "âNote: After clicking Save, the system will restart immediately."
+			},
+			select: {
+				t1: "Working mode",
+				1: "Working mode:",
+				2: "Data collection",
+				3: "Transparency"
+			},
+			remote: {
+				t1: "Remote server setting",
+				t2: "Server A Setting",
+				1: "Server",
+				2: "IP address",
+				3: "Domain name",
+				4: "Port",
+				5: "Connection",
+				6: "Status",
+				7: "Test",
+				8: "Server A",
+				9: "Server B",
+				10: "Server C",
+				ot1: "Default"
+			},
+			port: {
+				t1: "Serial port parameters setting",
+				t2: "Internal server parameters setting",
+				1: "Baud rate",
+				2: "Data bit",
+				3: "Parity bit",
+				4: "Stop bit",
+				5: "CTSRTS",
+				6: "Protocol",
+				7: "Port",
+				8: "Server address",
+				9: "Max. TCP connections (1-32)",
+				10: "TCP time out setting(no more than 600s)"
+			},
+			wirepoint: {
+				t1: "Access point setting",
+				t2: "Security setting",
+				t3: "LAN parameters setting",
+				1: "Network mode",
+				2: "Network name(SSID)",
+				3: "Module MAC address",
+				4: "Select channel",
+				5: "Auto-select",
+				6: "Transmission power",
+				7: "High",
+				8: "Medium",
+				9: "Low",
+				10: "Encryption mode",
+				11: "WEP encryption",
+				12: "Password (5 or 13 ASCII)",
+				13: "Password (10 or 26 HEX)",
+				14: "WPA encryption",
+				15: "Encryption algorithm",
+				16: "Password (8 to 63 characters)",
+				17: "IP address (DHCP gateway setting)",
+				18: "Subnet mask",
+				19: "DHCP Server",
+				20: "Disabled",
+				21: "Enable",
+				22: "Domain name",
+				23: "(The domain name should be within 1-30 characters, and could be combination of alphabets and numbers, but alphabets must be included)",
+				24: "Current user name",
+				// 25: "user name (Max.15 characters)",
+				25: "Network name(SSID)",
+				26: "Re-enter user name",
+				// 27: "New password (Max.15 characters)",
+				27: "Password (Max.15 characters)",
+				28: "Re-enter password",
+				29: "Change the encryption mode for AP",
+				30: "Access point setting"
+			},
+			account: {
+				t1: "Set a new account and password",
+				1: "Current user name",
+				2: "New user name",
+				3: "Re-enter user name",
+				4: "New password",
+				5: "Re-enter password"
+			},
+			update: {
+				t1: "Upgrade firmware",
+				t2: "Upgrade inverter software",
+				1: "Current version:",
+				2: "âNote:The upgrade will take about one minute. During upgrade, please make sure that your computer is always connected with the device, and the device must be always power on, otherwise the device will be damaged permanently.",
+				3: "Current version:"
+			},
+			restart: {
+				t1: "Restart device",
+				1: "<font class='b'>Important:</font><br /><br />After restart, you will need to login to the web interface of the monitoring stick again.<br /><br />It is recommended to restart after completing the whole configuration.<br /><br />Restart will interrupt the network for a very short period, are you sure to restart now?"
+			},
+			reset: {
+				t1: "Restore factory setting",
+				1: "<font class='b'>Important:</font><br /><br />This will reset the monitoring stick to factory settings. After reset you can access the web interface of the stick at http://10.10.100.254 using username and password: âadminâ, â123456789â.  <br /><br />Are you sure you want to reset the stick?"
+			},
+			commit: {
+				t1: "Set up finished, the monitoring stick will now attempt to connect to the network.",
+				t2: "Rebooting successful!",
+				t3: "Reset successful!",
+				t4: "Saved successfully!",
+				t5: "Enable wireless function",
+				1: "Note:<br />&nbsp;&nbsp;&nbsp;&nbsp;It takes about 10s for the monitoring stick to connect to the network. If the green LED on the stick turns solid, it means the setup was successful.<br / ><br / >&nbsp;&nbsp;&nbsp;&nbsp;If the green LED keeps flashing, and the AP is still available, please reconnect to the stick and redo the setup. Make sure you enter the correct Wi-Fi password.<br / ><br / >&nbsp;&nbsp;&nbsp;&nbsp;For more assistance and troubleshooting, please see the installation manual or Dealer Support website.",
+				2: "To re-login the configuration interface, please make sure that your computer or smart phone and our device are in the same network segment, and enter the new IP address of the device to access the interface.",
+				3: 'You can manually close this page; or reconnect the network of the device and re-login the <a onClick="window.parent.relogin()" style="cursor:pointer; text-decoration:underline;color:#666666;font-weight:bold;">configuration interface</a>.',
+				4: "Configurations will take effect after restart.<br /><br />After restart, you will need to re-login the configuration interface for other settings, so it is recommended to restart after completing all settings.<br /><br />Please click [Restart] to restart now, or click [Back] to continue setting and restart later with the restart function on left menu.",
+				5: "The wireless function has been turned off. If you wish to set wireless connection, please enable the wireless function first.<br /><br />After enabling this function, the system will restart and the network will be suspended for a short while. <br /><br />Are you sure to enable wireless function now?",
+				6: "Successful setup!"
+			}
+		};
+		var tip_en = {
+			1: "Enable",
+			2: "Disable",
+			3: "Connected",
+			4: "Not connected",
+			5: "s",
+			6: "No WiFi selected!",
+			7: "The password is empty!",
+			8: "Passwords not match!",
+			9: "Invalid IP address!",
+			10: "Invalid subnet mask!",
+			11: "Invalid gateway address!",
+			12: "Invalid DNS server address!",
+			13: "Please enter 5 or 13 ASCII!",
+			14: "Please enter 10 or 26 Hex!",
+			15: "Please enter 8-63 characters!",
+			16: "Please enter the password!",
+			17: "Invalid MAC address!",
+			18: "Please select the file!",
+			19: "Are you sure to upgrade?",
+			20: "The user name is empty!",
+			21: "User names not match!",
+			22: "Incorrect port!",
+			23: "The port number must be less than 65535!",
+			24: "Incorrect Max. TCP connections!",
+			25: "Max. TCP connections are no more than 32!",
+			26: "Incorrect TCP time out setting!",
+			27: "Max. TCP time-out period is no more than 600s!",
+			28: "Invalid server address!",
+			29: "Please enter the valid port number!",
+			30: "Invalid domain name format!",
+			31: "Connection to WiFi network failed, invalid encryption method or wrong passwords.",
+			32: "Connecting",
+			33: "Password must contain minimum 8 characters!",
+			34: "Please select the encryption type for WEP. Please check your wireless router to get the valid type. If a wrong type is selected, setting may fail. ",
+			35: "Please enter valid passwords according to the following requirements:\n    Hexadecimal: 10 or 26 characters, combination of characters between 0-9, a-f, A-F\n    ASCII: 5 or 13 characters, combination of characters between 0-9, a-f, A-F",
+			36: "Warnning: your password cannot be verified by this encryption.",
+			37: "The inverter software upgrade failed, please try again !",
+			38: "",
+			39: "Inverter software upgrade is successful. The module will restart automatically, please close this page.",
+			40: "SSID can not be empty!",
+			41: "Unknow",
+			42: "Communication interruption and upgrade failure. Please power off the inverter and re-power, then you can restart upgrade!"
+		};
+		var servertip_en = {
+			h1: " Server A",
+			h2: " Server B",
+			h3: " Server C",
+			1: "Please input port of",
+			2: "!",
+			3: "Please input IP address and domain name of",
+			4: "!",
+			5: "Incorrect IP address of",
+			6: "!",
+			7: "Incorrect port of",
+			8: "!",
+			9: "The port number must be less than 65535!"
+		};
+
+		function initLan() {
+			var help_list = help_en;
+			var opt_list = opt_en;
+			setFont();
+			switch (slanV) {
+				case "CN":
+					help_list = help_cn;
+					opt_list = opt_cn;
+					break;
+				case "EN":
+					help_list = help_en;
+					opt_list = opt_en;
+					break
+			}
+			getCon("op_t1").innerHTML = opt_list["1"].t;
+			getCon("op_t3").innerHTML = opt_list["3"].t;
+			getCon("op_t5").innerHTML = opt_list["5"].t; 
+			// getCon("op_t52").innerHTML = opt_list["52"].t;  //ä¿çä»¥åç¨
+			getCon("op_t54").innerHTML = opt_list["54"].t;
+			// getCon("op_t7").innerHTML = opt_list["7"].t;
+			// getCon("op_t71").innerHTML = opt_list["71"].t;
+			// getCon("op_t72").innerHTML = opt_list["72"].t;
+			getCon("op_t8").innerHTML = opt_list["8"].t;
+			getCon("op_t9").innerHTML = opt_list["9"].t;
+			getCon("help_tit").innerHTML = opt_list["help"].t;
+			getCon("help_1").innerHTML = help_list["1"].t;
+			// getCon("help_2_1").innerHTML = help_list["21"].t;
+			// getCon("help_2_2").innerHTML = help_list["22"].t;
+			// getCon("help_2_3").innerHTML = help_list["23"].t;
+			// getCon("help_2_4").innerHTML = help_list["24"].t;
+			// getCon("help_2_5").innerHTML = help_list["25"].t;
+			// getCon("help_2_6").innerHTML = help_list["26"].t;
+			// getCon("help_2_7").innerHTML = help_list["27"].t;
+			getCon("help_3_1").innerHTML = help_list["31"].t;
+			getCon("help_3_2").innerHTML = help_list["32"].t;
+			getCon("help_4").innerHTML = help_list["4"].t;
+			getCon("help_5_1").innerHTML = help_list["51"].t;
+			// getCon("help_5_2").innerHTML = help_list["52"].t;  //ä¿çä»¥åç¨
+			getCon("help_5_3").innerHTML = help_list["53"].t;
+			getCon("help_5_4").innerHTML = help_list["54"].t;
+			getCon("help_6").innerHTML = help_list["6"].t;
+			getCon("help_7_1").innerHTML = help_list["71"].t;
+			getCon("help_7_2").innerHTML = help_list["72"].t;
+			getCon("help_8").innerHTML = help_list["8"].t;
+			getCon("help_9").innerHTML = help_list["9"].t;
+			getCon("help_res").innerHTML = help_list["res"].t
+		}
+
+		function setFont() {
+			if (slanV == "CN") {
+				getCon("main").style.fontFamily = "å¾®è½¯éé»"
+			} else {
+				getCon("main").style.fontFamily = "Arial"
+			}
+		}
+
+		function reFont() {
+			if (slanV == "CN") {
+				return "å¾®è½¯éé»"
+			} else {
+				return "Arial"
+			}
+		}
+
+		function getCon(id) {
+			return document.getElementById(id)
+		}
+
+		function changeLan(lan) {
+			switch (lan) {
+				case "CN":
+					getCon("lang_iframe_id").src = "set_lang_zhcn.html";
+					break;
+				case "EN":
+					getCon("lang_iframe_id").src = "set_lang_en.html";
+					break
+			}
+			slanV = lan;
+			initLan();
+			if (child_page) {
+				child_page.window.initPageText()
+			}
+		}
+		var sel = 1;
+
+		function opt_sel(v) {
+			getCon("op_" + sel).className = "opt_no";
+			getCon("op_" + v).className = "opt_sel";
+			sel = v;
+			initDiv(v);  //æ¾ç¤ºé¡µé¢
+			show_help(v) //æ¾ç¤ºçå¸®å©
+		}
+
+		function super_opt(v, t) {  //2 5
+			hide("help_res");
+			var child = document.getElementById("child_page");
+			child.style.display = "none";
+			if (t == 5) {
+				show("help_5");
+				for (var i = 1; i <= 4; i++) {
+					if (i == v) {
+						show("div_5_" + i);
+						var cont = document.getElementById("op_5_" + v);
+						if (	cont) {
+							cont.className = "opt_sel2"
+						}
+					} else {
+						hide("div_5_" + i);
+						var cont = document.getElementById("op_5_" + i);
+						if (cont) {
+							cont.className = "opt_no2"
+						}
+					}
+				}
+				switch (v) {
+					case 1:
+						child.src = getUrl(51);
+						break;
+					case 2:
+						child.src = getUrl(52);
+						break;
+					case 3:
+						child.src = getUrl(53);
+						break;
+					case 4:
+						child.src = getUrl(54);
+						break
+				}
+				div_5_help(v)
+			} else {
+				show("help_7");
+				for (var i = 1; i <= 2; i++) {
+					if (i == v) {
+						show("div_7_" + i);
+						var cont = document.getElementById("op_7_" + v);
+						if (cont) {
+							cont.className = "opt_sel2"
+						}
+					} else {
+						hide("div_7_" + i);
+						var cont = document.getElementById("op_7_" + i);
+						if (cont) {
+							cont.className = "opt_no2"
+						}
+					}
+				}
+				switch (v) {
+					case 1:
+						child.src = getUrl(71);
+						break;
+					case 2:
+						child.src = getUrl(72);
+						break
+				}
+				div_7_help(v)
+			}
+		}
+
+		function initDiv(v) {  //v=5
+			hide("help_res");
+			var child = document.getElementById("child_page");   //iframe
+			child.style.display = "none";
+			child.src = getUrl(v);
+			if (v == 2) {
+				div_2_help(1)
+			}
+			if (v == 3) {
+				div_3_help(1)
+			}
+			if (v == 5) { //è¿å¥  ä¸é¢çä¸¤ä¸ªåæ°4   åæ¬æ¯2
+				div_5_help(4);
+				show("op_5_sel");
+				super_opt(4, 5)
+			} else {
+				hide("op_5_sel")
+			}
+			if (v == 7) {
+				div_7_help(1);
+				show("op_7_sel");
+				super_opt(1, 7)
+			} else {
+				hide("op_7_sel")
+			}
+		}
+
+		function getUrl(v) {
+			switch (v) {
+				case 1:
+					return "status.html";
+					break;
+				case 3:
+					return "wireless.html";
+					break;
+				case 4:
+					return "cable.html";
+					break;
+				case 6:
+					return "account.html";
+					break;
+				case 7:
+					return "update.html";
+					break;
+				case 8:
+					return "restart.html";
+					break;
+				case 9:
+          return "reset.html";
+          break;
+				case 51:
+					return "select.html";
+					break;
+				case 52:
+					return "remote.html";
+					break;
+				case 53:
+					return "port.html";
+					break;
+				case 54:
+					return "wirepoint.html";
+					break;
+				case 71:
+					return "update.html";
+					break;
+				case 72:
+					return "invupdate.html";
+					break
+			}
+		}
+
+		function div_2_help(v) {
+			for (var i = 1; i <= 7; i++) {
+				if (i == v) {
+					show("help_2_" + i)
+				} else {
+					hide("help_2_" + i)
+				}
+			}
+		}
+
+		function div_3_help(v) {
+			for (var i = 1; i <= 2; i++) {
+				if (i == v) {
+					show("help_3_" + i)
+				} else {
+					hide("help_3_" + i)
+				}
+			}
+		}
+
+		function div_5_help(v) {  //v=2
+			for (var i = 1; i <= 4; i++) {
+				if (i == v) {
+					show("help_5_" + i)
+				} else {
+					hide("help_5_" + i)
+				}
+			}
+		}
+
+		function div_7_help(v) {
+			for (var i = 1; i <= 2; i++) {
+				if (i == v) {
+					show("help_7_" + i)
+				} else {
+					hide("help_7_" + i)
+				}
+			}
+		}
+
+		function show(v) {
+			var c = document.getElementById(v);
+			if (c != null) {
+				c.style.display = ""
+			}
+		}
+
+		function hide(v) {
+			var c = document.getElementById(v);
+			if (c != null) {
+				c.style.display = "none"
+			}
+		}
+
+		function show_help(v) {
+			for (var i = 1; i <= 9; i++) {
+				var c = document.getElementById("help_" + i);
+				if (c != null) {
+					if (i == v) {
+						c.style.display = ""
+					} else {
+						c.style.display = "none"
+					}
+				}
+			}
+		}
+
+		function child_height(v) {
+			var a = document.getElementById("child_page"); //iframeçé«åº¦
+			if (a != null) {
+				a.style.height = v + "px"
+			}
+			var b = document.getElementById("back_div"); //åè£¹iframeçdiv
+			if (b != null) {
+				b.style.height = v + "px"
+			}
+			var c = document.getElementById("menu_div");
+			if (c != null) {
+				c.style.height = v + "px"
+			}
+			var d = document.getElementById("help");
+			if (d != null) {
+				// d.style.height = v + "px"
+			}
+			var e = document.getElementById("help_msg_div");
+			if (e != null) {
+				e.style.height = (v - 39) + "px"
+			}
+		}
+
+		function show_ifr() {
+			document.getElementById("child_page").style.display = ""
+		}
+
+		function rt(page, num) {
+			switch (slanV) {
+				case "CN":
+					return main_cn[page][num];
+					break;
+				case "EN":
+					return main_en[page][num];
+					break
+			}
+			return main_en[page][num]
+		}
+
+		function reBtn(num) {
+			switch (slanV) {
+				case "CN":
+					return btn_cn[num].t;
+					break;
+				case "EN":
+					return btn_en[num].t;
+					break
+			}
+			return btn_en[num].t
+		}
+
+		function reList(page) {
+			switch (slanV) {
+				case "CN":
+					return main_cn[page];
+					break;
+				case "EN":
+					return main_en[page];
+					break
+			}
+			return main_en[page]
+		}
+
+		function reTip(num) {
+			console.log(slanV)
+			switch (slanV) {
+				case "CN":
+					return tip_cn[num];
+					break;
+				case "EN":
+					return tip_en[num];
+					break
+			}
+			return tip_en[num]
+		}
+
+		function alertTip(num) {
+			switch (slanV) {
+				case "CN":
+					alert(tip_cn[num]);
+					return;
+					break;
+				case "EN":
+					alert(tip_en[num]);
+					return;
+					break
+			}
+			alert(tip_en[num])
+		}
+
+		function showtip2(c, d) {
+			var server_list = servertip_en;
+			switch (slanV) {
+				case "CN":
+					server_list = servertip_cn;
+					break;
+				case "EN":
+					server_list = servertip_en;
+					break
+			}
+			switch (c) {
+				case 3:
+					alert(server_list["1"] + server_list["h" + (d + 1)] + server_list["2"]);
+					break;
+				case 4:
+					alert(server_list["3"] + server_list["h" + (d + 1)] + server_list["4"]);
+					break;
+				case 5:
+					alert(server_list["5"] + server_list["h" + (d + 1)] + server_list["6"]);
+					break;
+				case 6:
+					alert(server_list["7"] + server_list["h" + d] + server_list["8"]);
+					break;
+				case 7:
+					alert(server_list["9"]);
+					break
+			}
+		}
+
+		function init_page() {
+			document.getElementById("child_page").src = "status.html"
+		}
+		function unfold(){
+			// expand
+			var help = document.getElementById("help_msg_div")
+			var expand = document.getElementById("expand")
+			if(help.style.display == 'none'){
+				help.style.display = 'block'
+				expand.className = 'expand2'
+			}else{
+				help.style.display = 'none'
+				expand.className = 'expand'
+			}
+			
+		}
+  </script>
+  <script type="text/javascript">
+   var slanV = "EN";
+  </script>
+ </head>
+ <body onload="init_page();" style="background-color:#F5F6F8">
+  <div id="main" style="width:960px;margin-left:auto;margin-right:auto;margin-top:15px">
+   <iframe id="lang_iframe_id" style="border-style:none;width:0px;height:0px">
+   </iframe>
+   <div style="width:50%;float:left;height:42px">
+   </div>
+   <div style="width:50%;float:left;height:22px;margin-top:16px;text-align:right;">
+    <a class="lan lan_r" onclick="changeLan('CN')" style="font-family:å¾®è½¯éé»">
+     ä¸­æ
+    </a>
+    <font style="font-size: 12px;color: #0163AC">
+     |
+    </font>
+    <a class="lan" onclick="changeLan('EN')" style="font-family:Arial">
+     English
+    </a>
+   </div>
+   <div class="cl">
+   </div>
+   <div class="back_div rad_l" id="menu_div" style="width:140px;height:501px">
+    <div class="sp_40">
+    </div>
+    <div class="opt_sel" id="op_1" onclick="opt_sel(1)">
+     <div class="opt" id="op_t1">
+     </div>
+    </div>
+    <div class="opt_no" id="op_3" onclick="opt_sel(3)">
+     <div class="opt" id="op_t3">
+     </div>
+    </div>
+    <div class="opt_no" id="op_5" onclick="opt_sel(5)">
+     <div class="opt" id="op_t5">
+     </div>
+    </div>
+    <div id="op_5_sel" style="display:none">
+     <div class="opt_no2" id="op_5_4" onclick="super_opt(4,5)">
+      <div class="opt2" id="op_t54">
+      </div>
+     </div>
+    </div>
+    <div class="opt_no" id="op_8" onclick="opt_sel(8)">
+     <div class="opt" id="op_t8">
+     </div>
+    </div>
+    <div class="opt_no" id="op_9" onclick="opt_sel(9)">
+     <div class="opt" id="op_t9">
+     </div>
+    </div>
+   </div>
+   <div class="back_div rad_r" id="back_div" style="width:600px">
+    <iframe allowtransparency="true" frameborder="0" id="child_page" name="child_page" scrolling="no" style="border-style:none;width:100%;height:500px;border-spacing:0px">
+    </iframe>
+   </div>
+   <div class="back_div2 rad_a" id="help">
+    <div class="lab_b rad_t" onclick="unfold()">
+     <div class="expand" id="expand">
+     </div>
+     <div id="help_tit" style="padding-top:10px;width:160px">
+     </div>
+    </div>
+    <div class="rad_b" id="help_msg_div" style="height:460px; overflow:auto;display: none">
+     <div style="padding-top:15px;padding-left:10px;padding-right:10px;padding-bottom:30px">
+      <div class="cl">
+      </div>
+      <div class="lab_h" id="help_1">
+      </div>
+      <div class="lab_h" id="help_2" style="display:none">
+       <div id="help_2_1">
+       </div>
+       <div id="help_2_2">
+       </div>
+       <div id="help_2_3">
+       </div>
+       <div id="help_2_4">
+       </div>
+       <div id="help_2_5">
+       </div>
+       <div id="help_2_6">
+       </div>
+       <div id="help_2_7">
+       </div>
+      </div>
+      <div class="lab_h" id="help_3" style="display:none">
+       <div id="help_3_1">
+       </div>
+       <div id="help_3_2">
+       </div>
+      </div>
+      <div class="lab_h" id="help_4" style="display:none">
+      </div>
+      <div class="lab_h" id="help_5" style="display:none">
+       <div id="help_5_1">
+       </div>
+       <!-- <div id="help_5_2"></div> -->
+       <div id="help_5_3">
+       </div>
+       <div id="help_5_4">
+       </div>
+      </div>
+      <div class="lab_h" id="help_6" style="display:none">
+      </div>
+      <div class="lab_h" id="help_7" style="display:none">
+       <div id="help_7_1">
+       </div>
+       <div id="help_7_2">
+       </div>
+      </div>
+      <div class="lab_h" id="help_8" style="display:none">
+      </div>
+      <div class="lab_h" id="help_9" style="display:none">
+      </div>
+      <div class="lab_h" id="help_res" style="display:none">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="cl">
+   </div>
+   <div class="sp_20">
+   </div>
+   <div class="bot_txt">
+    Web Ver:1.0.0
+   </div>
+  </div>
+  <script type="text/javascript">
+   setFont();  //éæ©å­ä½
+		initLan();  //éæ©å¸®å©
+		opt_sel(1);  //tabåæ¢çèæ¯è²
+  </script>
+ </body>
+</html>
