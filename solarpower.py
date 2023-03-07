@@ -1,20 +1,38 @@
 import requests 
+from datetime import datetime
+from datetime import date
+import datetime
 from requests import HTTPError
 from requests.exceptions import ConnectionError
-
 import time
 import signal
 import sys
 sys.path.append('../')
 import rgb1602
-import datetime
 import logging
+import json
+import webbrowser
 
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(message)s',
                     handlers=[logging.FileHandler("/var/log/solarpower.log"),
                               logging.StreamHandler()])
+
+def sunrisesunset(sun):
+	# Set Location for Sunrise/Sunset
+	params = {"lat":55.614719, "lng":-4.498792, "date":date.today()}
+
+	f = r"https://api.sunrise-sunset.org/json?"
+	a = requests.get(f, params=params)
+	a = json.loads(a.text)
+	a = a["results"]
+	if sun == "Rise":
+		sun = datetime.datetime.strptime(a["sunrise"], '%I:%M:%S %p')
+	else:
+		sun = datetime.datetime.strptime(a["sunset"], '%I:%M:%S %p')
+	sun = sun.strftime('%H')
+	return (int(sun))
 
 def fiveminutesPassed(oldminute):
 	currentminute = time.gmtime()[4]
@@ -100,13 +118,13 @@ while True:
 	logging.debug("Outside Loop - timeNow: " + str(timeNow) )
 	#print("True")
 	# Only pull data during daylight hours.
-	while int(timeNow) > 8 and int(timeNow) < 17:	
+	while int(timeNow) > sunrisesunset("Rise") and int(timeNow) < sunrisesunset("Set"):	
 		timeN = datetime.datetime.now()
 		timeNow = timeN.strftime("%H")
 		
 		#ipaddr = get_ip_from_file()
 
-		logging.debug("Inside Loop - >9:00 and <17:00")
+		logging.debug("Inside Loop - > SunRise and SunSet")
     		#lcd.noDisplay()
 		lcd.clear()
 		# Making a get request
